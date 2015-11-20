@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProveedorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProveedorLabel_proveedorNombre}" for="proveedorNombre" />
+                    <h:inputText id="proveedorNombre" value="#{proveedorController.selected.proveedorNombre}" title="#{bundle.CreateProveedorTitle_proveedorNombre}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateProveedorLabel_proveedorDireccion}" for="proveedorDireccion" />
+                    <h:inputText id="proveedorDireccion" value="#{proveedorController.selected.proveedorDireccion}" title="#{bundle.CreateProveedorTitle_proveedorDireccion}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateProveedorLabel_proveedorTelefono}" for="proveedorTelefono" />
+                    <h:inputText id="proveedorTelefono" value="#{proveedorController.selected.proveedorTelefono}" title="#{bundle.CreateProveedorTitle_proveedorTelefono}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateProveedorLabel_proveedorCelular}" for="proveedorCelular" />
+                    <h:inputText id="proveedorCelular" value="#{proveedorController.selected.proveedorCelular}" title="#{bundle.CreateProveedorTitle_proveedorCelular}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateProveedorLabel_proveedorEmail}" for="proveedorEmail" />
+                    <h:inputText id="proveedorEmail" value="#{proveedorController.selected.proveedorEmail}" title="#{bundle.CreateProveedorTitle_proveedorEmail}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateProveedorLabel_proveedorDescripcion}" for="proveedorDescripcion" />
+                    <h:inputText id="proveedorDescripcion" value="#{proveedorController.selected.proveedorDescripcion}" title="#{bundle.CreateProveedorTitle_proveedorDescripcion}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{proveedorController.create}" value="#{bundle.CreateProveedorSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{proveedorController.prepareList}" value="#{bundle.CreateProveedorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProveedorIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

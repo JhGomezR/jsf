@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="/template.xhtml">    
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateClienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteNombres}" for="clienteNombres" />
+                    <h:inputText id="clienteNombres" value="#{clienteController.selected.clienteNombres}" title="#{bundle.CreateClienteTitle_clienteNombres}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_clienteNombres}"/>
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clientePrimerApell}" for="clientePrimerApell" />
+                    <h:inputText id="clientePrimerApell" value="#{clienteController.selected.clientePrimerApell}" title="#{bundle.CreateClienteTitle_clientePrimerApell}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_clientePrimerApell}"/>
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteSegApell}" for="clienteSegApell" />
+                    <h:inputText id="clienteSegApell" value="#{clienteController.selected.clienteSegApell}" title="#{bundle.CreateClienteTitle_clienteSegApell}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_clienteSegApell}"/>
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteTDi}" for="clienteTDi" />
+                    <h:inputText id="clienteTDi" value="#{clienteController.selected.clienteTDi}" title="#{bundle.CreateClienteTitle_clienteTDi}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_clienteTDi}"/>
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteDi}" for="clienteDi" />
+                    <h:inputText id="clienteDi" value="#{clienteController.selected.clienteDi}" title="#{bundle.CreateClienteTitle_clienteDi}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_clienteDi}"/>
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteDireccion}" for="clienteDireccion" />
+                    <h:inputText id="clienteDireccion" value="#{clienteController.selected.clienteDireccion}" title="#{bundle.CreateClienteTitle_clienteDireccion}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteTelefono}" for="clienteTelefono" />
+                    <h:inputText id="clienteTelefono" value="#{clienteController.selected.clienteTelefono}" title="#{bundle.CreateClienteTitle_clienteTelefono}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteCelular}" for="clienteCelular" />
+                    <h:inputText id="clienteCelular" value="#{clienteController.selected.clienteCelular}" title="#{bundle.CreateClienteTitle_clienteCelular}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_clienteEmail}" for="clienteEmail" />
+                    <h:inputText id="clienteEmail" value="#{clienteController.selected.clienteEmail}" title="#{bundle.CreateClienteTitle_clienteEmail}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{clienteController.create}" value="#{bundle.CreateClienteSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{clienteController.prepareList}" value="#{bundle.CreateClienteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateClienteIndexLink}"/>
+            </h:form>
+        </ui:define>
+        </ui:composition>
+    </body>
+
+</html>

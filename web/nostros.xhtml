@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Nosotros</title>
+    </h:head>
+    <h:body>
+        
+        <div>
+            <ui:include src="/template/template.xhtml" />
+        </div>
+        
+            <h:form id="form">           
+                    <p:growl id="msgs" showDetail="true" /> 
+                    <h3>Nosotros</h3>
+                    <p:accordionPanel dynamic="true" cache="true">                       
+                        
+                        <p:tab title="Conozcanos" >
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage name="resources/images/nosotros/conozcanos.jpg" />
+                                <h:outputText value="Es una empresa de producción agropecuaria, con énfasis en el producto vegetal de la papa y sus respectivas variedades, y de igual forma la producción de alverja, avena. 
+                                              Así también hacemos presencia en el sector de transporte. La base fundamental de la empresa Agrícola San Jorge S.A es su equipo humano, los profesionales y personal adscrito que la conforman. 
+                                              Quienes dedican todo su esfuerzo, anhelo e idoneidad para que nuestros clientes queden totalmente satisfechos.
+                                              Más de 20 años dedicados a la producción agropecuaria, transporte y comercialización de productos y servicios conforme a los requerimientos establecidos por cada solicitante, 
+                                              y así brindar soluciones a nuestros clientes. " />
+                            </h:panelGrid>
+                        </p:tab>
+                        
+                        <p:tab title="Misión">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage name="resources/images/nosotros/mision.png" />
+                                <h:outputText value="Francis Ford Coppola's legendary..." />
+                            </h:panelGrid>
+                        </p:tab>
+                        
+                        <p:tab title="Visión">                            
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage name="resources/images/nosotros/vision.png" />
+                                <h:outputText value="After a break of more than 15 years..." />
+                            </h:panelGrid>
+                        </p:tab>
+                        
+                    </p:accordionPanel>    
+                </h:form>   
+        
+        
+    </h:body>
+</html>
+

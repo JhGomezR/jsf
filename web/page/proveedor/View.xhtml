@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProveedorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewProveedorLabel_idProveedor}"/>
+                    <h:outputText value="#{proveedorController.selected.idProveedor}" title="#{bundle.ViewProveedorTitle_idProveedor}"/>
+                    <h:outputText value="#{bundle.ViewProveedorLabel_proveedorNombre}"/>
+                    <h:outputText value="#{proveedorController.selected.proveedorNombre}" title="#{bundle.ViewProveedorTitle_proveedorNombre}"/>
+                    <h:outputText value="#{bundle.ViewProveedorLabel_proveedorDireccion}"/>
+                    <h:outputText value="#{proveedorController.selected.proveedorDireccion}" title="#{bundle.ViewProveedorTitle_proveedorDireccion}"/>
+                    <h:outputText value="#{bundle.ViewProveedorLabel_proveedorTelefono}"/>
+                    <h:outputText value="#{proveedorController.selected.proveedorTelefono}" title="#{bundle.ViewProveedorTitle_proveedorTelefono}"/>
+                    <h:outputText value="#{bundle.ViewProveedorLabel_proveedorCelular}"/>
+                    <h:outputText value="#{proveedorController.selected.proveedorCelular}" title="#{bundle.ViewProveedorTitle_proveedorCelular}"/>
+                    <h:outputText value="#{bundle.ViewProveedorLabel_proveedorEmail}"/>
+                    <h:outputText value="#{proveedorController.selected.proveedorEmail}" title="#{bundle.ViewProveedorTitle_proveedorEmail}"/>
+                    <h:outputText value="#{bundle.ViewProveedorLabel_proveedorDescripcion}"/>
+                    <h:outputText value="#{proveedorController.selected.proveedorDescripcion}" title="#{bundle.ViewProveedorTitle_proveedorDescripcion}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{proveedorController.destroyAndView}" value="#{bundle.ViewProveedorDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewProveedorEditLink}"/>
+                <br />
+                <h:commandLink action="#{proveedorController.prepareCreate}" value="#{bundle.ViewProveedorCreateLink}" />
+                <br />
+                <h:commandLink action="#{proveedorController.prepareList}" value="#{bundle.ViewProveedorShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewProveedorIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

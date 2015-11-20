@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Bovinos</title>
+    </h:head>
+    
+    <h:body>       
+        
+        <div>
+            <ui:include src="/template/template.xhtml" />
+        </div>
+        
+        
+        <h:form>            
+            <p:outputPanel deferred="true" deferredMode="visible">
+                <h3 align="center">Bovinos</h3>
+                <p>Agrícola San Jorge les brinda los mas cómodos y reconfortantes campos de pastoreo, constituidos por amplias regiones con buenos pastos y agua, aplicando siempre una calidad superior para su cuidado y manutención óptima; los cuales son prescindibles para la crianza del ganado bovino, siendo este uno de los más comerciales por sus lácteos y los cárnicos, de igual forma comparte la venta de cueros.</p>
+            </p:outputPanel>
+        </h:form>
+        
+        <h:form>
+            <h:panelGrid columns="2">
+                
+            </h:panelGrid>            
+        </h:form>
+        
+        <div style="width: 100%; height: 330px" align="left">
+            <p:contentFlow value="#{imagesView.images}" var="image">
+                <p:graphicImage value="/resources/images/bovino/#{image}" styleClass="content" />
+                <div class="caption">#{image}</div>
+            </p:contentFlow>
+        </div>      
+        
+        
+    </h:body>
+</html>
+
